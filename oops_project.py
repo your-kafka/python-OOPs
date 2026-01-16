@@ -13,15 +13,42 @@ class chatbook:
                        4. Press 4 to message a friend
                        5. Press any other key to exist""")
     if user_input == '1':
-      pass
+      self.signup()
     elif user_input == '2':
-      pass 
+      self.signin()
     elif user_input == '3':
       pass 
     elif user_input == '4':
       pass 
     else:
       exit()
+
+  def signup(self):
+    email = input("enter your email here --> ")
+    password = input('set your password here -->')
+    self.username = email
+    self.password = password 
+    print('You have signed up successfully')
+    print('\n')
+    self.menu()
+
+  def signin(self):
+    if self.username =='' and self.password =='':
+       print('please signup by entering 1 in the main menu')
+    else :
+       username = input('enter your email/username here ->')
+       password = input('enter your passkey here ->')
+       if self.username == username and self.password == password:
+         print('you have signed in successfully !!')
+         self.loggedin = True
+       
+       else :
+         print('please input correct credentials')
+
+    print('\n')
+    self.menu()     
+               
+     
 
 obj = chatbook()
     
